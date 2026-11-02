@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import { person, roles, contact, facts, highlights, expertise, clients, gallery } from './content.js'
+import { person, roles, contact, facts, highlights, expertise, clients, healing, gallery } from './content.js'
 
-const nav = [['profile', 'Profile'], ['highlights', 'Highlights'], ['expertise', 'Expertise'], ['clients', 'Clientele']]
+const nav = [['profile', 'Profile'], ['highlights', 'Highlights'], ['expertise', 'Expertise'], ['clients', 'Clientele'], ['holistic-health', 'Holistic Health']]
 
 function useReveal() {
   useEffect(() => {
@@ -139,6 +139,57 @@ function Clients() {
   )
 }
 
+// Leaf pairs set along the stem of the botanical drawing.
+const LEAF = 'M0 0C28-30 92-36 136 0C92 32 28 32 0 0Z'
+const sprig = [
+  [300, 690, 1.15], [282, 610, 1.12], [272, 530, 1.06], [272, 450, 0.98],
+  [282, 372, 0.88], [302, 298, 0.76], [330, 232, 0.62], [364, 176, 0.46],
+].flatMap(([x, y, s], i) => [
+  { x, y, s, r: -38 - i * 2 },
+  { x, y, s, r: 218 + i * 2 },
+])
+
+function Botanical() {
+  return (
+    <svg className="heal-art" viewBox="0 0 640 800" aria-hidden="true">
+      <g className="sway">
+        <path className="stem" d="M340 800C286 640 244 470 284 330C304 262 344 200 404 130" />
+        {sprig.map((l, i) => (
+          <g key={i} transform={`translate(${l.x} ${l.y}) rotate(${l.r}) scale(${l.s})`}>
+            <path className="leaf" d={LEAF} />
+            <path className="rib" d="M6 0H124" />
+          </g>
+        ))}
+        <g transform="translate(404 130) rotate(-52) scale(.4)">
+          <path className="leaf" d={LEAF} />
+          <path className="rib" d="M6 0H124" />
+        </g>
+      </g>
+    </svg>
+  )
+}
+
+function Rich({ text }) {
+  return text.split('**').map((part, i) => (i % 2 ? <strong key={i}>{part}</strong> : part))
+}
+
+function Healing() {
+  return (
+    <section id="holistic-health" className="heal" aria-labelledby="heal-title">
+      {healing.image
+        ? <div className="heal-bg" style={{ backgroundImage: `url(${healing.image})` }} aria-hidden="true" />
+        : <Botanical />}
+      <div className="heal-in">
+        <p className="eyebrow rv">{healing.eyebrow}</p>
+        <h2 id="heal-title" className="rv">{healing.title}</h2>
+        <p className="heal-name rv">{healing.clinic}</p>
+        <p className="heal-cap rv">{healing.status}</p>
+        {healing.body.map((p) => <p className="heal-tx rv" key={p}><Rich text={p} /></p>)}
+      </div>
+    </section>
+  )
+}
+
 function Gallery() {
   if (!gallery.length) return null
   return (
@@ -190,7 +241,7 @@ export default function App() {
   return (
     <>
       <Header />
-      <main><Hero /><Ticker /><Profile /><Highlights /><Expertise /><Clients /><Gallery /><Contact /></main>
+      <main><Hero /><Ticker /><Profile /><Highlights /><Expertise /><Clients /><Healing /><Gallery /><Contact /></main>
       <footer className="ft"><span>© {new Date().getFullYear()} Annet Wanjiku Njiru</span><span>Built by SpenceTecH &amp; Logistics Ltd</span></footer>
     </>
   )

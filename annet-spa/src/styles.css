@@ -1,4 +1,4 @@
-:root{--sky:#ACDDFE;--esp:#1E1511;--esp2:#2C211B;--amb:#D9822B;--ambd:#9A560F;--cream:#FBF7F0;--sand:#F1E8DA;--line:#DDD2BF;--mut:#6A5C50;--serif:'DM Serif Display',Georgia,serif;--sans:'Outfit',system-ui,sans-serif}
+:root{--herb:#2F5B3E;--sage:#A9CBA0;--sky:#ACDDFE;--esp:#1E1511;--esp2:#2C211B;--amb:#D9822B;--ambd:#9A560F;--cream:#FBF7F0;--sand:#F1E8DA;--line:#DDD2BF;--mut:#6A5C50;--serif:'DM Serif Display',Georgia,serif;--sans:'Outfit',system-ui,sans-serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:72px}
 body{margin:0;font-family:var(--sans);color:var(--esp);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%}a{color:inherit}h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;letter-spacing:-.01em}
@@ -48,6 +48,22 @@ img{display:block;max-width:100%}a{color:inherit}h1,h2,h3{font-family:var(--seri
 /* clients */
 .cgrid{list-style:none;margin:56px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--esp);border-left:1px solid var(--line)}
 .cgrid li{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:46px 22px;text-align:center;font:400 clamp(22px,2.2vw,30px)/1.15 var(--serif);display:flex;align-items:center;justify-content:center;min-height:150px;transition:background .25s}.cgrid li:hover{background:var(--sky)}
+/* holistic health (same pattern as the SHEconomy band on the Betty Karimi site) */
+.heal{position:relative;overflow:hidden;isolation:isolate;color:var(--cream);padding:140px max(24px,calc((100vw - 1160px)/2));background:linear-gradient(100deg,var(--esp) 32%,#1F3327 62%,var(--herb))}
+.heal-bg{position:absolute;inset:-40px;z-index:-2;background-size:cover;background-position:center 30%;animation:drift 24s ease-in-out infinite alternate}
+.heal:has(.heal-bg):before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(30,21,17,.97) 34%,rgba(30,21,17,.82) 58%,rgba(47,91,62,.72))}
+.heal-art{position:absolute;z-index:-1;right:max(-40px,calc((100vw - 1320px)/2));bottom:-40px;height:calc(100% + 40px);min-height:680px;width:auto;max-width:56%;opacity:.8;pointer-events:none}
+.sway{transform-origin:340px 800px;animation:sway 11s ease-in-out infinite alternate}
+.heal-art .stem,.heal-art .rib{fill:none;stroke:var(--sage);stroke-width:2.5;stroke-linecap:round}.heal-art .rib{opacity:.55;stroke-width:1.5}
+.heal-art .leaf{fill:rgba(169,203,160,.13);stroke:var(--sage);stroke-width:1.5}
+.heal-in{position:relative;max-width:680px}
+.heal .eyebrow{color:var(--amb)}
+.heal h2{font-size:clamp(34px,4vw,54px);line-height:1.05}
+.heal-name{margin:26px 0 0;font:400 clamp(50px,7.4vw,100px)/.98 var(--serif);color:var(--amb);text-shadow:0 10px 40px rgba(217,130,43,.3)}
+.heal-cap{margin:14px 0 0;font-size:clamp(18px,1.8vw,24px);font-weight:600}
+.heal-tx{margin:22px 0 0;max-width:600px;font-size:17px;color:#E8DED0}.heal-tx strong{color:var(--cream);font-weight:600}
+@keyframes drift{to{transform:scale(1.1) translateX(-20px)}}
+@keyframes sway{from{transform:rotate(-1.4deg)}to{transform:rotate(1.4deg)}}
 /* gallery */
 .ggrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}.ggrid figure{margin:0}.ggrid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px}.ggrid figcaption{font-size:14px;color:var(--mut);margin-top:8px}
 /* contact */
@@ -59,9 +75,10 @@ input,textarea{font:inherit;padding:14px;border-radius:8px;border:1.5px solid va
 .ok{font:400 28px var(--serif);color:var(--esp)!important}
 .ft{background:var(--esp);color:#B9A999;font-size:13px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding:26px max(24px,calc((100vw - 1160px)/2))}
 .rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}.rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.track{animation:none}html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.track,.sway,.heal-bg{animation:none}html{scroll-behavior:auto}}
 @media (max-width:900px){
 .sec{padding:84px 24px}
+.heal{padding:100px 24px}.heal-art{opacity:.2;max-width:none;right:-120px}
 .hero{grid-template-columns:1fr;min-height:0}.hero-l{padding:104px 24px 44px}.hero-r{aspect-ratio:4/4.4}.hero-r img{object-position:50% 15%}
 .profile,.exw,.ct{grid-template-columns:1fr;gap:40px}.facts{grid-template-columns:1fr 1fr;row-gap:18px}
 .hgrid{grid-template-columns:1fr}.hcard{padding:26px}.panel{padding:32px}

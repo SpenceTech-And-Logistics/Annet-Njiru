@@ -81,6 +81,21 @@ export const clients = [
   "Safaricom",
 ];
 
+// The Healing Balm section. **double asterisks** make words bold.
+// When a clinic photo is supplied, put it in public/images/ and set `image`,
+// e.g. "/images/clinic.jpg". It then replaces the botanical drawing.
+export const healing = {
+  eyebrow: "Founder",
+  title: "Alternative Medicine and Holistic Healthcare",
+  clinic: "Healing Balm Herbal Clinic",
+  status: "Registered under the Government of Kenya",
+  body: [
+    "Annet is also the Founder of **Healing Balm Herbal Clinic**, registered under the Government of Kenya. Through the clinic, she promotes alternative medicine, herbal healthcare, energy healing and holistic wellness. Her work embraces an integrated approach to physical, emotional and spiritual well-being, drawing on indigenous medicinal knowledge and complementary healing practices.",
+    "She is also actively involved in the **conservation of indigenous medicinal plants**, advocating for the preservation of biodiversity and the sustainable use of natural resources. Her commitment extends to safeguarding indigenous healing knowledge, promoting responsible alternative healthcare practices and advancing the recognition of complementary medicine within Kenya’s broader healthcare landscape.",
+  ],
+  image: "",
+};
+
 export const gallery = [
   // { src: '/images/event-1.jpg', caption: 'Caption here' },
 ];

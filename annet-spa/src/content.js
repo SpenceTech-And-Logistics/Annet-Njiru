@@ -90,7 +90,7 @@ export const healing = {
   clinic: "Healing Balm Herbal Clinic",
   status: "Registered under the Government of Kenya",
   body: [
-    "Annet is also the Founder of **Healing Balm Herbal Clinic**, registered under the Government of Kenya. Through the clinic, she promotes alternative medicine, herbal healthcare, energy healing and holistic wellness. Her work embraces an integrated approach to physical, emotional and spiritual well-being, drawing on indigenous medicinal knowledge and complementary healing practices.",
+    "Annet is also the Founder of **Healing Balm Herbal Clinic**, registered by the Government of Kenya. Through the clinic, she promotes alternative medicine, herbal healthcare, energy healing and holistic wellness. Her work embraces an integrated approach to physical, emotional and spiritual well-being, drawing on indigenous medicinal knowledge and complementary healing practices.",
     "She is also actively involved in the **conservation of indigenous medicinal plants**, advocating for the preservation of biodiversity and the sustainable use of natural resources. Her commitment extends to safeguarding indigenous healing knowledge, promoting responsible alternative healthcare practices and advancing the recognition of complementary medicine within Kenya’s broader healthcare landscape.",
   ],
   image: "",

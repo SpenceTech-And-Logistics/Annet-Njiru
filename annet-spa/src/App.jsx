@@ -181,9 +181,8 @@ function Healing() {
         : <Botanical />}
       <div className="heal-in">
         <p className="eyebrow rv">{healing.eyebrow}</p>
-        <h2 id="heal-title" className="rv">{healing.title}</h2>
-        <p className="heal-name rv">{healing.clinic}</p>
-        <p className="heal-cap rv">{healing.status}</p>
+        <h2 id="heal-title" className="heal-name rv">{healing.clinic}</h2>
+        <p className="heal-sub rv">{healing.title}</p>
         {healing.body.map((p) => <p className="heal-tx rv" key={p}><Rich text={p} /></p>)}
       </div>
     </section>

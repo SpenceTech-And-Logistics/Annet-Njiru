@@ -6,3 +6,5 @@ Open items: contact details blank; only one photo supplied (add more via `galler
 Added 2 Nov 2026: Holistic Health section for Healing Balm Herbal Clinic (`Healing` in `src/App.jsx`, text in `healing` in `src/content.js`, `.heal` in `src/styles.css`), following the SHEconomy band on the Betty Karimi site. It sits after Clientele and has a nav link. No clinic photo was supplied, so it shows a drawn botanical sprig; set `healing.image` to use a photo instead (the drawing is then dropped and a dark overlay keeps the text readable).
 
 Added 3 Nov 2026: SEO, same setup as the Betty Karimi site. Edit text in `src/seo/site.js`, set the live address in `.env.production`, and log changes in `SEO.md`.
+
+Updated 3 Nov 2026: in the Holistic Health section, the clinic name now leads as the heading, followed by "Alternative Medicine and Holistic Healthcare". The separate registration caption is gone; that wording now sits in the first paragraph.

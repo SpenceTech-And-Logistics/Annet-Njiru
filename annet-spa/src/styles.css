@@ -58,9 +58,8 @@ img{display:block;max-width:100%}a{color:inherit}h1,h2,h3{font-family:var(--seri
 .heal-art .leaf{fill:rgba(169,203,160,.13);stroke:var(--sage);stroke-width:1.5}
 .heal-in{position:relative;max-width:680px}
 .heal .eyebrow{color:var(--amb)}
-.heal h2{font-size:clamp(34px,4vw,54px);line-height:1.05}
-.heal-name{margin:26px 0 0;font:400 clamp(50px,7.4vw,100px)/.98 var(--serif);color:var(--amb);text-shadow:0 10px 40px rgba(217,130,43,.3)}
-.heal-cap{margin:14px 0 0;font-size:clamp(18px,1.8vw,24px);font-weight:600}
+.heal .heal-name{margin:0;font:400 clamp(50px,7.4vw,100px)/.98 var(--serif);color:var(--amb);text-shadow:0 10px 40px rgba(217,130,43,.3)}
+.heal-sub{margin:20px 0 6px;font:400 clamp(30px,3.6vw,48px)/1.08 var(--serif);letter-spacing:-.01em}
 .heal-tx{margin:22px 0 0;max-width:600px;font-size:17px;color:#E8DED0}.heal-tx strong{color:var(--cream);font-weight:600}
 @keyframes drift{to{transform:scale(1.1) translateX(-20px)}}
 @keyframes sway{from{transform:rotate(-1.4deg)}to{transform:rotate(1.4deg)}}

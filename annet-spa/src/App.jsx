@@ -40,8 +40,8 @@ function Hero() {
       <div className="hero-l">
         <p className="kicker">{person.title}</p>
         <h1>
-          <span>{person.first}</span>
-          <span className="i">{person.middle}</span>
+          <span>{person.first}</span>{' '}
+          <span className="i">{person.middle}</span>{' '}
           <span>{person.last}</span>
         </h1>
         <p className="tag">{person.tagline}</p>
@@ -51,7 +51,7 @@ function Hero() {
         </div>
       </div>
       <div className="hero-r">
-        <img src={person.portrait} alt="Annet Wanjiku Njiru" fetchpriority="high" />
+        <img src={person.portrait} alt="Annet Wanjiku Njiru" fetchPriority="high" />
         <div className="chip"><b>CEO</b><span>Big Win Agencies</span></div>
       </div>
     </section>

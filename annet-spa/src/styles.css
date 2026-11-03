@@ -80,6 +80,7 @@ input,textarea{font:inherit;padding:14px;border-radius:8px;border:1.5px solid va
 .sec{padding:84px 24px}
 .heal{padding:100px 24px}.heal-art{opacity:.2;max-width:none;right:-120px}
 .hero{grid-template-columns:1fr;min-height:0}.hero-l{padding:104px 24px 44px}.hero-r{aspect-ratio:4/4.4}.hero-r img{object-position:50% 15%}
+.chip{left:12px;bottom:10px;padding:7px 13px;border-radius:9px}.chip b{font-size:20px}.chip span{font-size:11px}
 .profile,.exw,.ct{grid-template-columns:1fr;gap:40px}.facts{grid-template-columns:1fr 1fr;row-gap:18px}
 .hgrid{grid-template-columns:1fr}.hcard{padding:26px}.panel{padding:32px}
 .cgrid{grid-template-columns:1fr 1fr}.cgrid li{padding:30px 14px;min-height:110px}.ggrid{grid-template-columns:1fr 1fr}

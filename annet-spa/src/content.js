@@ -3,7 +3,8 @@ export const person = {
   first: "Annet",
   middle: "Wanjiku",
   last: "Njiru",
-  tagline: "Strategic Vision · Executive Leadership · Business Excellence",
+  tagline:
+    "Strategic Vision · Executive Leadership · Business Excellence · Alternative Healing Consultant",
   title: "Executive professional profile",
   intro:
     "An accomplished and results-oriented business professional with over 20 years of experience in strategic marketing, entrepreneurship, corporate relations and consultancy. Recognised for commercial insight, strategic networking and building valuable business relationships.",
@@ -86,7 +87,7 @@ export const clients = [
 // e.g. "/images/clinic.jpg". It then replaces the botanical drawing.
 export const healing = {
   eyebrow: "Founder",
-  title: "Alternative Medicine and Holistic Healthcare",
+  title: "Alternative Healing and Holistic Healthcare",
   clinic: "Healing Balm Herbal Clinic",
   body: [
     "Annet is also the Founder of **Healing Balm Herbal Clinic**, **registered by the Government of Kenya**. Through the clinic, she promotes alternative medicine, herbal healthcare, energy healing and holistic wellness. Her work embraces an integrated approach to physical, emotional and spiritual well-being, drawing on indigenous medicinal knowledge and complementary healing practices.",

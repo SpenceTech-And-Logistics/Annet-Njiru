@@ -14,6 +14,7 @@
 // address and sitemap are skipped.
 
 import fs from 'node:fs'
+import os from 'node:os'
 import path from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { createElement } from 'react'
@@ -29,6 +30,7 @@ async function renderPage(root) {
   const server = await createServer({
     root,
     configFile: false,
+    cacheDir: path.join(os.tmpdir(), 'annet-seo-vite'),
     logLevel: 'error',
     appType: 'custom',
     plugins: [react()],

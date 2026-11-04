@@ -8,3 +8,5 @@ Added 2 Nov 2026: Holistic Health section for Healing Balm Herbal Clinic (`Heali
 Added 3 Nov 2026: SEO, same setup as the Betty Karimi site. Edit text in `src/seo/site.js`, set the live address in `.env.production`, and log changes in `SEO.md`.
 
 Updated 3 Nov 2026: in the Holistic Health section, the clinic name now leads as the heading, followed by "Alternative Medicine and Holistic Healthcare". The separate registration caption is gone; that wording now sits in the first paragraph.
+
+Added 4 Nov 2026: the build now prerenders the page into `dist/index.html` (`renderPage` in `seo-plugin.js`) and `src/main.jsx` hydrates it. New Questions section (`faq` in `src/content.js`) feeds Google's FAQ data. See `SEO.md`.

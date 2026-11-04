@@ -6,16 +6,26 @@
 
 export const SITE = {
   name: "Annet Wanjiku Njiru",
+  // Other ways people write her name. Also used in Google's structured data.
+  alternateNames: ["Annet Njiru", "Annet W. Njiru"],
   title: "Annet Wanjiku Njiru | CEO, Big Win Agencies & Healing Balm Founder",
   description:
     "Annet Wanjiku Njiru is CEO of Big Win Agencies and Founder of Healing Balm Herbal Clinic in Kenya, with 20+ years in marketing, mediation and consultancy.",
   keywords: [
     "Annet Wanjiku Njiru",
     "Annet Njiru",
+    "Annet Njiru Kenya",
+    "Annet Wanjiku Njiru CEO",
+    "Annet Njiru Big Win Agencies",
+    "Annet Njiru Healing Balm",
+    "CEO of Big Win Agencies",
+    "Founder of Healing Balm Herbal Clinic",
     "Big Win Agencies",
     "Healing Balm Herbal Clinic",
     "herbal clinic Kenya",
     "alternative medicine Kenya",
+    "alternative healing consultant Kenya",
+    "energy healing Kenya",
     "holistic wellness Kenya",
     "indigenous medicinal plants Kenya",
     "marketing executive Kenya",
@@ -46,6 +56,8 @@ export const SITE = {
     "Business strategy",
     "Corporate advisory",
     "Alternative medicine",
+    "Alternative healing",
+    "Energy healing",
     "Herbal healthcare",
     "Holistic wellness",
     "Conservation of indigenous medicinal plants",

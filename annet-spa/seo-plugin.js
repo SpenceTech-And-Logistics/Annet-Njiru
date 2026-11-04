@@ -3,7 +3,10 @@
 // After `vite build` this writes the real <head> tags (title, description,
 // social preview, structured data) into dist/index.html, plus sitemap.xml and
 // robots.txt, so Google, WhatsApp and LinkedIn can read them without running
-// JavaScript. All text comes from src/seo/site.js.
+// JavaScript. All text comes from src/seo/site.js and src/content.js.
+//
+// It also writes the page itself into <div id="root">, so search engines read
+// her name and every section as plain HTML. src/main.jsx then takes over.
 //
 // It needs the live address, set in .env.production:
 //   VITE_SITE_URL=https://your-domain.com
@@ -13,9 +16,33 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { pathToFileURL } from 'node:url'
+import { createElement } from 'react'
+import { renderToString } from 'react-dom/server'
+import { createServer } from 'vite'
+import react from '@vitejs/plugin-react'
 
 const esc = (value) =>
   String(value).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+
+// Renders the React app to HTML and returns it with the FAQ text.
+async function renderPage(root) {
+  const server = await createServer({
+    root,
+    configFile: false,
+    logLevel: 'error',
+    appType: 'custom',
+    plugins: [react()],
+    server: { middlewareMode: true, hmr: false, watch: null },
+    optimizeDeps: { noDiscovery: true, include: [] },
+  })
+  try {
+    const { default: App } = await server.ssrLoadModule('/src/App.jsx')
+    const { faq } = await server.ssrLoadModule('/src/content.js')
+    return { html: renderToString(createElement(App)), faq }
+  } finally {
+    await server.close()
+  }
+}
 
 const jsonLd = (data) => `<script type="application/ld+json">${JSON.stringify(data).replace(/</g, '\\u003c')}</script>`
 
@@ -39,6 +66,7 @@ export default function seoPlugin() {
       if (!fs.existsSync(indexPath)) return
 
       const { SITE } = await import(`${pathToFileURL(path.resolve(root, 'src/seo/site.js')).href}?t=${Date.now()}`)
+      const page = await renderPage(root)
       const template = fs.readFileSync(indexPath, 'utf8')
       const block = /<!-- seo:start -->[\s\S]*?<!-- seo:end -->/
       if (!block.test(template)) {
@@ -55,6 +83,7 @@ export default function seoPlugin() {
         '@type': 'Person',
         ...(personId && { '@id': personId }),
         name: SITE.name,
+        alternateName: SITE.alternateNames,
         jobTitle: SITE.jobTitle,
         description: SITE.description,
         ...(url && { url }),
@@ -101,6 +130,7 @@ export default function seoPlugin() {
             '@type': 'ProfilePage',
             name: SITE.title,
             url,
+            dateModified: new Date().toISOString().slice(0, 10),
             mainEntity: { '@id': personId },
           }),
         url && jsonLd({ '@context': 'https://schema.org', '@type': 'WebSite', name: SITE.name, url }),
@@ -109,14 +139,26 @@ export default function seoPlugin() {
             '@context': 'https://schema.org',
             '@type': 'Organization',
             name,
+            address: { '@type': 'PostalAddress', addressCountry: SITE.country },
             ...(personId ? { founder: { '@id': personId } } : { founder: { '@type': 'Person', name: SITE.name } }),
           }),
         ),
+        jsonLd({
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: page.faq.map((f) => ({
+            '@type': 'Question',
+            name: f.q,
+            acceptedAnswer: { '@type': 'Answer', text: f.a },
+          })),
+        }),
       ]
 
       fs.writeFileSync(
         indexPath,
-        template.replace(block, () => `<!-- seo:start -->\n    ${tags.filter(Boolean).join('\n    ')}\n    <!-- seo:end -->`),
+        template
+          .replace(block, () => `<!-- seo:start -->\n    ${tags.filter(Boolean).join('\n    ')}\n    <!-- seo:end -->`)
+          .replace('<div id="root"></div>', () => `<div id="root">${page.html}</div>`),
       )
 
       const robots = ['User-agent: *', 'Allow: /']

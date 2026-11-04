@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { person, roles, contact, facts, highlights, expertise, clients, healing, gallery } from './content.js'
+import { person, roles, contact, facts, highlights, expertise, clients, healing, faq, gallery } from './content.js'
 
 const nav = [['profile', 'Profile'], ['highlights', 'Highlights'], ['expertise', 'Expertise'], ['clients', 'Clientele'], ['holistic-health', 'Holistic Health']]
 
@@ -51,7 +51,7 @@ function Hero() {
         </div>
       </div>
       <div className="hero-r">
-        <img src={person.portrait} alt="Annet Wanjiku Njiru" fetchPriority="high" />
+        <img src={person.portrait} alt="Annet Wanjiku Njiru, CEO of Big Win Agencies and Founder of Healing Balm Herbal Clinic" fetchPriority="high" />
         <div className="chip"><b>CEO</b><span>Big Win Agencies</span></div>
       </div>
     </section>
@@ -71,7 +71,7 @@ function Profile() {
   return (
     <section id="profile" className="sec profile">
       <div className="pl rv">
-        <p className="eyebrow">Profile</p>
+        <p className="eyebrow">About Annet Njiru</p>
         <h2>Commercial insight, built on relationships.</h2>
       </div>
       <div className="pr rv">
@@ -189,6 +189,23 @@ function Healing() {
   )
 }
 
+function Faq() {
+  return (
+    <section id="about-annet" className="sec faq" aria-labelledby="faq-title">
+      <p className="eyebrow">Questions</p>
+      <h2 id="faq-title" className="rv">About Annet Wanjiku Njiru</h2>
+      <div className="faq-list rv">
+        {faq.map((f, i) => (
+          <details key={f.q} open={i === 0}>
+            <summary><h3>{f.q}</h3></summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  )
+}
+
 function Gallery() {
   if (!gallery.length) return null
   return (
@@ -240,7 +257,7 @@ export default function App() {
   return (
     <>
       <Header />
-      <main><Hero /><Ticker /><Profile /><Highlights /><Expertise /><Clients /><Healing /><Gallery /><Contact /></main>
+      <main><Hero /><Ticker /><Profile /><Highlights /><Expertise /><Clients /><Healing /><Faq /><Gallery /><Contact /></main>
       <footer className="ft"><span>© {new Date().getFullYear()} Annet Wanjiku Njiru</span><span>Built by SpenceTecH &amp; Logistics Ltd</span></footer>
     </>
   )

@@ -63,6 +63,14 @@ img{display:block;max-width:100%}a{color:inherit}h1,h2,h3{font-family:var(--seri
 .heal-tx{margin:22px 0 0;max-width:600px;font-size:17px;color:#E8DED0}.heal-tx strong{color:var(--cream);font-weight:600}
 @keyframes drift{to{transform:scale(1.1) translateX(-20px)}}
 @keyframes sway{from{transform:rotate(-1.4deg)}to{transform:rotate(1.4deg)}}
+/* questions */
+.faq-list{margin-top:44px;max-width:860px;border-top:1px solid var(--esp)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;cursor:pointer}.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:'+';flex:none;font:400 30px/1 var(--serif);color:var(--ambd);transition:transform .2s}.faq details[open] summary:after{transform:rotate(45deg)}
+.faq summary:focus-visible{outline:2px solid var(--amb);outline-offset:3px}
+.faq h3{font-size:clamp(22px,2.4vw,28px);line-height:1.2}
+.faq details p{margin:0 0 26px;max-width:720px;font-size:18px;color:#3F342C}
 /* gallery */
 .ggrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}.ggrid figure{margin:0}.ggrid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px}.ggrid figcaption{font-size:14px;color:var(--mut);margin-top:8px}
 /* contact */

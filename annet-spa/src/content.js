@@ -96,6 +96,28 @@ export const healing = {
   image: "",
 };
 
+// "About Annet" questions. Written the way people search, so her name is found
+// in plain text. Only use facts that also appear elsewhere on the site.
+// seo-plugin.js reuses these for Google's FAQ data, so edit them only here.
+export const faq = [
+  {
+    q: "Who is Annet Wanjiku Njiru?",
+    a: "Annet Wanjiku Njiru, also known as Annet Njiru, is a business leader based in Kenya with over 20 years of experience in strategic marketing, entrepreneurship, corporate relations and consultancy. She is the Chief Executive Officer of Big Win Agencies and the Founder of Healing Balm Herbal Clinic.",
+  },
+  {
+    q: "What does Annet Njiru do?",
+    a: "Annet Njiru works as a marketing executive, entrepreneur, mediator in Alternative Dispute Resolution (ADR), business consultant and alternative healing consultant in Kenya.",
+  },
+  {
+    q: "What is Healing Balm Herbal Clinic?",
+    a: "Healing Balm Herbal Clinic is a clinic in Kenya founded by Annet Wanjiku Njiru and registered by the Government of Kenya. It promotes alternative medicine, herbal healthcare, energy healing and holistic wellness. Annet is also involved in the conservation of indigenous medicinal plants.",
+  },
+  {
+    q: "Which organisations has Annet Njiru worked with?",
+    a: `Annet Njiru's selected clientele includes ${clients.slice(0, -1).join(", ")} and ${clients[clients.length - 1]}.`,
+  },
+];
+
 export const gallery = [
   // { src: '/images/event-1.jpg', caption: 'Caption here' },
 ];

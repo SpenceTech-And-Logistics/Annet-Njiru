@@ -24,9 +24,9 @@ export const contact = {
   email: "",
   phone: "",
   location: "Kenya",
-  linkedin: "",
+  linkedin: "https://www.linkedin.com/in/annet-njiru-452a49344",
   instagram: "",
-  facebook: "",
+  facebook: "https://www.facebook.com/annet.njiru/",
   formspree: "", // optional Formspree form id
 };
 

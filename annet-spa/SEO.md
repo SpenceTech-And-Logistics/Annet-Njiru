@@ -34,7 +34,9 @@ Living SEO record for the site. Update it every time SEO changes: tick items off
 
 ## To do
 - [ ] Add her email and phone to `src/seo/site.js` (and `src/content.js` for the contact section)
-- [ ] Add her profile links to `sameAs` in `src/seo/site.js` (LinkedIn, Instagram, Facebook, Big Win Agencies, Healing Balm Herbal Clinic)
+- [x] LinkedIn and Facebook added to `sameAs` in `src/seo/site.js` and to the Contact section
+- [ ] Add Instagram and the Big Win Agencies and Healing Balm Herbal Clinic websites to `sameAs`, if they exist
+- [ ] Put https://annetnjiru.com on her LinkedIn and Facebook profiles, so the links run both ways
 - [ ] Add the clinic's town and address if she wants it found in local searches
 - [ ] **Top priority:** Google Search Console: add the site, paste the verification code into `googleVerification`, rebuild, verify, then submit `/sitemap.xml`
 - [ ] Bing Webmaster Tools: import from Search Console
@@ -46,3 +48,4 @@ Living SEO record for the site. Update it every time SEO changes: tick items off
 - **2026-11-03:** SEO set up, including Healing Balm Herbal Clinic. Added `src/seo/site.js`, `seo-plugin.js`, `.env.production`, `public/og-image.jpg`, `<noscript>` text, favicon and robots.txt. Tested with a sample address: all tags, structured data and the sitemap generate correctly.
 - **2026-11-03:** Live address set to https://annetnjiru.com.
 - **2026-11-04:** Prerendered the page into the HTML, added the Questions section and FAQ data, `alternateName`, more name phrases and a fuller photo description. Her name did not appear in web search checks on this date.
+- **2026-11-05:** Added her LinkedIn and Facebook to `sameAs` and the Contact section.

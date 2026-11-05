@@ -68,7 +68,10 @@ export const SITE = {
   email: "",
   telephone: "",
   // Her profile links (LinkedIn, Instagram, Facebook, company sites). Helps Google link them to her.
-  sameAs: [],
+  sameAs: [
+    "https://www.linkedin.com/in/annet-njiru-452a49344",
+    "https://www.facebook.com/annet.njiru/",
+  ],
 
   // Google Search Console "HTML tag" verification code (just the content="..." value).
   googleVerification: "",
